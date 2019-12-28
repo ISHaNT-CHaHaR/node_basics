@@ -6,13 +6,14 @@ const fs= require('fs');
 
  //const textout= `This is what we know about the avocado:${textin}`;
  //fs.writeFileSync('./txt/output.txt',textout);
- //console.log("file Written!");
+// console.log("file Written!");
   
  // Non-Blocking Asynchronous way.
 
-fs.readFile('.txt/start.txt','utf-8', (err,data)=>{
-     console.log(data);
-
-}); 
-console.log('will read data');
+fs.readFile('.txt/start.txt','utf-8', (err,data1)=>{
+    fs.writeFile(`.txt/${data1}.txt`,'utf-8', (err,data2)=>{
+    console.log(data2);
+    });
+});
+console.log("will read file!");
 
